@@ -1,6 +1,6 @@
 pipeline {
   environment {
-    AWS_ACCESS_KEY_ID = credentials('f9802c39-09e6-4640-ae78-324e3c1ad845')
+    AWS_ACCESS_KEY_ID = credentials('AWS_ACCESS_KEY_ID')
     AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
   }
     agent any
@@ -20,7 +20,7 @@ pipeline {
   stage('terraform plan') {
     steps {
     dir('devops') {
-        sh 'terraform plan -input=false'
+        sh 'terraform plan'
     }
     }
   }
