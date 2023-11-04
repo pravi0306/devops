@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+  stages {
+    stage('git checkout') {
+    git branch: 'main', url: 'https://github.com/pravi0306/devops.git'
+}
+  stage('terraform init') {
+    dir('devops') {
+        sh 'terraform init'
+    }
+  }
+   stage('terraform plan') {
+    dir('devops') {
+        sh 'terraform plan'
+    }
+  }
+   stage('terraform apply') {
+    dir('devops') {
+        sh 'terraform apply --auto-aprove'
+    }
+  }
+  }    
+}
