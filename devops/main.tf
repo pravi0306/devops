@@ -23,3 +23,12 @@ resource "aws_instance" "web" {
     Name = "HelloWorld"
   }
 }
+
+resource "aws_s3_bucket" "my_bucket" {
+  bucket = "ravi011992"
+
+  tags = {
+    Name        = "My bucket"
+    Environment = "Dev"
+  }
+}
