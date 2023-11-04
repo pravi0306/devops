@@ -8,23 +8,17 @@ pipeline {
 }
   stage('terraform init') {
     steps {
-      dir('devops') {
         sh 'terraform init'
-    }
     }
   }
   stage('terraform plan') {
     steps {
-      dir('devops') {
         sh 'terraform plan'
     }
-    }
   }
-   stage('terraform apply') {
+   stage('terraform action') {
     steps {
-      dir('devops') {
-        sh 'terraform apply --auto-approve'
-    }
+        sh 'terraform ${action} --auto-approve'
     }
   }
   }    
