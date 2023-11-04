@@ -24,12 +24,12 @@ resource "aws_instance" "web" {
   }
 }
 
-resource "aws_s3_bucket" "my_bucket" {
-  bucket = "ravi011992"
-  region = "ap-south-1"
+# resource "aws_s3_bucket" "my_bucket" {
+#   bucket = "ravi011992"
+#   region = "ap-south-1"
 
-  tags = {
-    Name        = "My bucket"
-    Environment = "Dev"
-  }
-}
+#   tags = {
+#     Name        = "My bucket"
+#     Environment = "Dev"
+#   }
+# }
