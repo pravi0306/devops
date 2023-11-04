@@ -1,4 +1,8 @@
 pipeline {
+  environment {
+    AWS_ACCESS_KEY_ID = credentials('f9802c39-09e6-4640-ae78-324e3c1ad845')
+    AWS_SECRET_ACCESS_KEY = credentials('AWS_SECRET_ACCESS_KEY')
+  }
     agent any
   stages {
     stage('git checkout') {
